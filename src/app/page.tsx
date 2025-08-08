@@ -206,7 +206,8 @@ const Home = () => {
           }}
         >
           <Avatar
-            src="avtar.webp"
+           src="avtar.webp"
+
 
             alt="Latha Kumpatla"
             sx={{
