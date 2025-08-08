@@ -21,6 +21,11 @@ function InnerThemeProvider({ children }: { children: ReactNode }) {
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <title>Latha Kumpatla</title>
+       
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body>
         <Provider store={store}>
           <InnerThemeProvider>{children}</InnerThemeProvider>
