@@ -206,7 +206,7 @@ const Home = () => {
           }}
         >
           <Avatar
-           src="./avtar.webp"
+           src="/portfolio/avtar.webp"
 
 
             alt="Latha Kumpatla"
