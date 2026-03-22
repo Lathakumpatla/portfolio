@@ -21,6 +21,7 @@ import {
   Paper,
 } from '@mui/material';
 import { motion } from 'framer-motion';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 import Header from '../components/Header'; 
 import InstagramIcon from '@mui/icons-material/Instagram';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -37,6 +38,7 @@ import { keyframes, useMediaQuery } from '@mui/system';
 import Preloader from '@/components/preloader';
 import { BackgroundElements } from '@/components/BackgroundElements';
 import { useSelector } from 'react-redux';
+import ChatBot from '@/components/ChatBot';
 
 const flipAnimation = keyframes`
   0% {
@@ -191,8 +193,7 @@ const Home = () => {
     marginLeft: isMobile ? '0' : '250px',
     width: isMobile ? '100%' : 'calc(100% - 250px)',
   }}
->
-        {/* Hero Section */}
+> {/* Hero Section */}
         <Box
           sx={{
             minHeight: 'calc(100vh - 80px)', 
@@ -205,24 +206,28 @@ const Home = () => {
             pl: { xs: 2, sm: 6, md: 12, lg: 24, xl: 30 }, 
           }}
         >
-          <Avatar
-           src="/portfolio/avtar.webp"
+<Avatar
+  src="portfolio.jpeg"
+  alt="Latha Kumpatla"
+  imgProps={{
+    style: {
+      objectFit: 'cover',
+      objectPosition: '90% 40%', 
+    },
+  }}
+  sx={{
+    width: 180,
+    height: 180,
+    borderRadius: '50%',
+    backgroundColor: 'transparent',
+  }}
+/>
 
 
-            alt="Latha Kumpatla"
-            sx={{
-              width: 150,
-              height: 150,
-              border: 'none',
-              boxShadow: 'none',
-              padding: 0,
-              objectFit: 'cover',
-              backgroundColor: 'transparent',
-            }}
-          />
+
 
           <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1, fontSize: 40 }}>
-            Latha Kumpatla
+           Latha Kumpatla
           </Typography>
 
           <Box sx={{ display: 'inline-flex', alignItems: 'center', mb: 3 }}>
@@ -250,14 +255,7 @@ const Home = () => {
 
           {/* Social Icons */}
           <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', mb: 3 }}>
-            <IconButton
-              component="a"
-              href="https://www.instagram.com/your-username" 
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <InstagramIcon />
-            </IconButton>
+         
 
             <IconButton
               component="a"
@@ -289,6 +287,45 @@ const Home = () => {
           >
             Contact me
           </Button>
+         
+
+
+ {/* Scroll Down Indicator BELOW Contact button */}
+<motion.div
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 1.5 }}
+  style={{
+    marginTop: 24,
+    cursor: 'pointer',
+    display: 'flex',
+    justifyContent: 'center',
+  }}
+  onClick={() =>
+    window.scrollTo({
+      top: window.innerHeight,
+      behavior: 'smooth',
+    })
+  }
+>
+  <motion.div
+    animate={{ y: [0, 12, 0] }}
+    transition={{
+      duration: 1.6,
+      repeat: Infinity,
+      ease: 'easeInOut',
+    }}
+  >
+    <ArrowDownwardIcon
+      sx={{
+        fontSize: 36,
+        color: theme.palette.text.secondary,
+        opacity: 0.8,
+      }}
+    />
+  </motion.div>
+</motion.div>
+
         </Box>
 
         {/* About Section */}
@@ -765,6 +802,7 @@ const Home = () => {
           <ArrowUpwardIcon />
         </Fab>
       </motion.div>
+      <ChatBot />
     </Box>
   );
 };
