@@ -613,7 +613,7 @@ const Home = () => {
 
 
               <Typography variant="subtitle1" sx={{ color: theme.palette.text.secondary, mb: 2 }}>
-                July 2023 – Present
+                June 2023 – Present
               </Typography>
 
               <List sx={{ color: theme.palette.text.secondary }}>
@@ -802,7 +802,7 @@ const Home = () => {
           <ArrowUpwardIcon />
         </Fab>
       </motion.div>
-      <ChatBot />
+     
     </Box>
   );
 };
